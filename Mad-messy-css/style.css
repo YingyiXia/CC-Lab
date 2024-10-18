@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(144, 210, 232);
+}
+p{
+    background-color: brown;
+}
+.special-highlight{
+    font-size: 30px;
+    background-color: chartreuse;
+}
