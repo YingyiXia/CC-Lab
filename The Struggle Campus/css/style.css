@@ -1,0 +1,64 @@
+#background-video {
+  position: fixed; /* 固定定位 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持视频比例并覆盖整个屏幕 */
+  z-index: -1; /* 确保视频在底层 */
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #5526e2;
+  text-align: center;
+}
+
+.home-screen, .name-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(167, 16, 243); 
+  z-index: 1; 
+}
+
+button {
+  color: rgb(166, 46, 231);
+  padding: 50px 75px;
+  border: none;
+  cursor: pointer;
+  font-size: 4em;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+  font-size: 8em;
+  margin-bottom: 260px;
+}
+
+button:hover {
+  background-color: #dcbbbb;
+}
+
+.conceptButton {
+  padding: 15px 30px; 
+  font-size: 1em; 
+  position: absolute; 
+  top: 90%;
+  left: 0%;
+  background-color: rgba(255, 255, 255, 0.7); 
+  color: rgb(82, 18, 221); 
+  border: none; 
+  cursor: pointer; 
+}
+
+.conceptButton:hover {
+  background-color: #dcbbbb; 
+}
+
