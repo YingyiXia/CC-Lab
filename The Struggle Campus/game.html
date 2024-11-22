@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Start</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+</head>
+<body>
+    <div class="game-screen">
+        <h1>Welcome,<span id="playerNameDisplay"></span></h1>
+
+        <p><i>Let's discover the campus together!</i></p>
+    </div>
+    <div id='p5-canvas-container'>
+        <!-- p5 canvas will be appended here. -->
+      </div>
+
+    <script>
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const playerName = urlParams.get('playerName');
+        
+        
+        document.getElementById('playerNameDisplay').textContent = playerName;
+    </script>
+    <h3>Map</h3>
+    <a href="concept.html">
+        <button id="conceptButton">Concept</button>
+    </a>
+   
+        <button id="realityButton">Reality</button>
+    
+
+    <script src="js/sketch.js"></script>
+    
+</body>
+</html>
