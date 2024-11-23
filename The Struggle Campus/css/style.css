@@ -1,11 +1,11 @@
 #background-video {
-  position: fixed; /* 固定定位 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 保持视频比例并覆盖整个屏幕 */
-  z-index: -1; /* 确保视频在底层 */
+  object-fit: cover; 
+  z-index: -1; 
 }
 
 
