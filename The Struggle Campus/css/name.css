@@ -1,0 +1,116 @@
+/* 重置所有元素的默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置页面背景和全局样式 */
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;  /* 背景颜色 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* 垂直从顶部开始排列 */
+  align-items: center;
+}
+
+/* 标题（Your name）样式 */
+.name-screen {
+  width: 800%; 
+  height: 1000%; /* 限制标题的最大宽度 */
+  text-align: left;  /* 左对齐标题 */
+  color: white;
+  background-color: rgb(170, 67, 181);  /* 紫色背景 */
+  padding: 20px;
+  font-size: 2em;
+  margin-left: -200%;
+  margin-top: 0%;  /* 稍微偏左 */
+  
+}
+
+/* 表单及输入框样式 */
+#nameForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* 输入框样式 */
+#playerName {
+  padding: 10px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+}
+
+/* 提交按钮样式 */
+#submitName {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* 渐变色 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* 提交按钮悬停效果 */
+#submitName:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+/* 设置性别选择按钮样式 */
+div button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1.1em;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变色 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+div button:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+/* 性别选择按钮放在画布左边 */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;  /* 给按钮添加一些间距 */
+}
+
+/* 设置canvas容器的位置，避免使用absolute定位 */
+#p5-canvas-container-name {
+  width: 60%; /* 画布的宽度 */
+  margin-left: 10%; /* 保证canvas左边距 */
+  margin-top: 20px; /* 保证画布和其他元素之间的间距 */
+}
+
+/* 设置Concept按钮的样式，定位在右下角 */
+#conceptButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变色 */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#conceptButton:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
