@@ -1,8 +1,8 @@
 
-  let snake;
+let snake;
 let food;
 let gridSize = 20;
-let negativeEffectTimer = 0;  
+let negativeEffectTimer = 0;
 let obstacles = [];
 let img1;
 let img2;
@@ -12,28 +12,32 @@ let titles = ["Net Novice", "Always Online", "Screen Slave", "Virtual World Expe
 let currentTitle = titles[0];
 let endings = ["Healthy user", "Normal and understandable", "You are addicted!", "Nobody ask you to hang out in reality?", "You are so empty inside! Congrats!", "you're funny"];
 let currentEnding = endings[0];
+let restartButton;
 
 function preload() {
-  img1 = loadImage('assets/Ins.jpg'); 
+  img1 = loadImage('assets/Ins.jpg');
   img2 = loadImage('assets/likes.png');
 }
 
 function setup() {
-  let canvas = createCanvas(1000,600);
+  let canvas = createCanvas(1000, 600);
   canvas.parent('p5-canvas-container-media');
-  canvas.position(windowWidth / 2 - width / 2, windowHeight / 2 - height /2);
-
-  frameRate(10); 
+  canvas.position(windowWidth / 2 - width / 2, windowHeight / 2 - height / 2);
+  frameRate(10);
   snake = new Snake();
   food = createFood();
+
+  restartButton = createButton('Restart');
+  restartButton.position(width / 2 +300, height / 2 + 280);
+  restartButton.size(100, 40);
+  restartButton.mousePressed(restartGame);
+  restartButton.hide(); // Hide the restart button initially
 }
 
 function draw() {
   background(255);
 
-  
   drawGradientBackground();
-
   snake.update();
   snake.show();
 
@@ -42,35 +46,29 @@ function draw() {
     return;
   }
 
-  // 绘制食物
   fill(255, 0, 0);
   noStroke();
   rect(food.x, food.y, gridSize, gridSize);
   image(img2, food.x - 4, food.y - 4, gridSize + 8, gridSize + 8);
 
-  // 玩家吃到食物
   if (snake.eat(food)) {
     food = createFood();
-    negativeEffectTimer += 2; 
+    negativeEffectTimer += 2;
   }
 
-  // 显示沉迷时间和进度条
   displayProgressBar();
 
-  // 生成障碍物
   generateObstacles();
-  fill(random(100,255),random(100,200), 0);
+  fill(random(100, 255), random(100, 200), 0);
   for (let obs of obstacles) {
     rect(obs.x, obs.y, obs.width, obs.height);
   }
 
-  // 更新速度
   updateSpeed();
 }
 
-// 绘制渐变背景
 function drawGradientBackground() {
-  let c1 = color(100+negativeEffectTimer*6, 50, 174);
+  let c1 = color(100 + negativeEffectTimer * 6, 50, 174);
   let c2 = color(255, 255, 255);
   for (let i = 0; i <= height; i++) {
     let inter = map(i, 0, height, 0, 1);
@@ -80,52 +78,48 @@ function drawGradientBackground() {
   }
 }
 
-// 游戏结束画面
 function gameOver() {
-  if (negativeEffectTimer >= 5 && negativeEffectTimer < 10) {
+  if (negativeEffectTimer >= 5 && negativeEffectTimer < 6) {
     currentEnding = endings[1];
-  } else if (negativeEffectTimer >= 10 && negativeEffectTimer < 15) {
+  } else if (negativeEffectTimer >= 6 && negativeEffectTimer < 8) {
     currentEnding = endings[2];
-  } else if (negativeEffectTimer >= 15 && negativeEffectTimer < 20) {
+  } else if (negativeEffectTimer >= 8 && negativeEffectTimer < 23) {
     currentEnding = endings[3];
-  } else if (negativeEffectTimer >= 20 && negativeEffectTimer < 30) {
+  } else if (negativeEffectTimer >= 23 && negativeEffectTimer < 35) {
     currentEnding = endings[4];
-  } else if (negativeEffectTimer >= 30) {
-    currentEnding = endings[5];}
-  background(155, 100, 150); 
+  } else if (negativeEffectTimer >= 35) {
+    currentEnding = endings[5];
+  }
+  background(155, 100, 150);
   textSize(32);
   fill(255);
   textAlign(CENTER, CENTER);
-  text("Game Over", width / 2, height / 2-160);
+  text("Game Over", width / 2, height / 2 - 160);
   textSize(24);
-  text("Time Wasted: " + negativeEffectTimer + "Hours", width / 2, height / 2 -120);
-  
-  textSize(40)
-  text("Review:"+ currentEnding,width / 2, height / 2 )
-  noLoop();  
+  text("Time Wasted: " + negativeEffectTimer + " Hours", width / 2, height / 2 - 120);
+
+  textSize(40);
+  text("Review: " + currentEnding, width / 2, height / 2);
+  restartButton.show(); // Show the restart button when game is over
+  noLoop();
 }
 
-// 显示进度条和沉迷时间
 function displayProgressBar() {
-  // 绘制进度条背景
   fill(160);
   noStroke();
   rect(width - progressBarWidth - 30, 30, progressBarWidth, progressBarHeight);
 
-  // 计算进度
   let progress = map(negativeEffectTimer, 0, 40, 0, progressBarWidth);
-  fill(220,213 , 90);
+  fill(220, 213, 90);
   rect(width - progressBarWidth - 30, 30, progress, progressBarHeight);
 
-  // 显示沉迷时间和称号
   fill(0);
   textSize(18);
   textAlign(LEFT, TOP);
-  text("Press 'ASDW' to Control , Collect likes and Avoid Obstacles.",470,60)
-  text("Time wasted: " + negativeEffectTimer + "hours", width - progressBarWidth - 30, 90);
+  text("Press 'ASDW' to Control , Collect likes and Avoid Obstacles.", 470, 60);
+  text("Time wasted: " + negativeEffectTimer + " hours", width - progressBarWidth - 30, 90);
   text("Title: " + currentTitle, width - progressBarWidth - 30, 120);
-  
-  // 更新称号
+
   if (negativeEffectTimer >= 5 && negativeEffectTimer < 10) {
     currentTitle = titles[1];
   } else if (negativeEffectTimer >= 10 && negativeEffectTimer < 15) {
@@ -139,7 +133,6 @@ function displayProgressBar() {
   }
 }
 
-// Snake类定义
 class Snake {
   constructor() {
     this.body = [];
@@ -209,23 +202,20 @@ class Snake {
   }
 }
 
-// 创建食物
 function createFood() {
   let x = floor(random(width / gridSize)) * gridSize;
   let y = floor(random(height / gridSize)) * gridSize;
   return createVector(x, y);
 }
 
-// obstacles
 function generateObstacles() {
-  let obstacleCount = floor(negativeEffectTimer / 3); 
-
+  let obstacleCount = floor(negativeEffectTimer / 3);
   while (obstacles.length < obstacleCount) {
     let x = floor(random(width / gridSize)) * gridSize;
     let y = floor(random(height / gridSize)) * gridSize;
 
     let isHorizontal = random() > 0.5;
-    let length = floor(random(11, 14)) * gridSize; 
+    let length = floor(random(11, 14)) * gridSize;
 
     if (isHorizontal) {
       obstacles.push({ x: x, y: y, width: length, height: gridSize });
@@ -235,13 +225,11 @@ function generateObstacles() {
   }
 }
 
-
 function updateSpeed() {
-  let lengthFactor = snake.body.length / 4;  
-  let newSpeed = map(lengthFactor, 1, 10, 10, 20);  
+  let lengthFactor = snake.body.length / 4;
+  let newSpeed = map(lengthFactor, 1, 10, 12, 25);
   frameRate(newSpeed);
 }
-
 
 function keyPressed() {
   if (keyCode === 65 && snake.xdir === 0) {
@@ -253,4 +241,16 @@ function keyPressed() {
   } else if (keyCode === 83 && snake.ydir === 0) {
     snake.setDir(0, 1);
   }
+}
+
+// Restart the game
+function restartGame() {
+  snake = new Snake();
+  food = createFood();
+  obstacles = [];
+  negativeEffectTimer = 0;
+  currentTitle = titles[0];
+  currentEnding = endings[0];
+  restartButton.hide();
+  loop();
 }
