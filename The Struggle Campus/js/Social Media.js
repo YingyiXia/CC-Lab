@@ -31,7 +31,7 @@ function setup() {
 function draw() {
   background(255);
 
-  // 绘制渐变背景
+  
   drawGradientBackground();
 
   snake.update();
@@ -216,7 +216,7 @@ function createFood() {
   return createVector(x, y);
 }
 
-// 生成障碍物
+// obstacles
 function generateObstacles() {
   let obstacleCount = floor(negativeEffectTimer / 3); 
 
@@ -225,7 +225,7 @@ function generateObstacles() {
     let y = floor(random(height / gridSize)) * gridSize;
 
     let isHorizontal = random() > 0.5;
-    let length = floor(random(11, 14)) * gridSize; //障碍物的长度
+    let length = floor(random(11, 14)) * gridSize; 
 
     if (isHorizontal) {
       obstacles.push({ x: x, y: y, width: length, height: gridSize });
@@ -235,14 +235,14 @@ function generateObstacles() {
   }
 }
 
-// 更新速度
+
 function updateSpeed() {
   let lengthFactor = snake.body.length / 4;  
   let newSpeed = map(lengthFactor, 1, 10, 10, 20);  
   frameRate(newSpeed);
 }
 
-// 键盘控制
+
 function keyPressed() {
   if (keyCode === 65 && snake.xdir === 0) {
     snake.setDir(-1, 0);
