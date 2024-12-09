@@ -17,24 +17,36 @@ body {
   text-align: center;
 }
 
+.pageTitle{
+  text-align: center;
+}
+
 .home-screen, .name-screen {
   position: absolute;
   top: 50%;
   left: 50%;
+  font-family: 'Rock Salt', 'Times New Roman', Times, serif;
+  background-color: rgba(255,255,255, 0.6);
+  border-radius: 200px;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: rgb(167, 16, 243); 
+  color: rgb(46, 3, 67); 
   z-index: 1; 
 }
 
+
+
+
 button {
-  color: rgb(166, 46, 231);
-  padding: 50px 75px;
+  color: rgb(46, 3, 70);
+  padding:  50px 75px;
+  font-family: 'Rock Salt','Times New Roman', Times, serif;
   border: none;
   cursor: pointer;
   font-size: 4em;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  margin-top: 0px;
+  background-color: rgba(236, 215, 247, 0.3);
 }
 
 h1 {
@@ -43,7 +55,9 @@ h1 {
 }
 
 button:hover {
-  background-color: #dcbbbb;
+  background-color: rgb(235, 244, 148);
+  
+  box-shadow: 0 0 15px rgba(240, 238, 238, 0.7);
 }
 
 .conceptButton {
@@ -62,3 +76,9 @@ button:hover {
   background-color: #dcbbbb; 
 }
 
+#p5-canvas-container-game {
+  display: flex;              
+  justify-content: center;    
+  align-items: center;       
+  height: 100vh;  
+}    
