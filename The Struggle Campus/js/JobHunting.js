@@ -21,7 +21,7 @@ function setup() {
   bug = new Bug();
 
   restartButton = createButton('Restart');
-  restartButton.position(width / 2 - 50, height / 2 + 100);
+  restartButton.position(width / 2 +300, height / 2 + 270);
   restartButton.size(100, 40);
   restartButton.mousePressed(restartGame);
   restartButton.hide();
