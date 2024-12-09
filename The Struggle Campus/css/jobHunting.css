@@ -17,6 +17,26 @@ body {
   margin: 0;
 }
 
+#backButton {
+  position: absolute; /* 设置为绝对定位 */
+  top: 20px;          /* 距离顶部 20px */
+  left: 40px;         /* 距离左边 20px */
+  z-index: 10;        /* 确保按钮在画布上方 */
+  background-color: #dabd2d;  /* 按钮背景色 */
+  color: rgb(255, 252, 252);       /* 按钮文本颜色 */
+  padding: 40px 40px; /* 按钮内边距 */
+  border: none;       /* 去掉边框 */
+  border-radius: 50px; /* 圆角 */
+  font-size: 26px;     /* 字体大小 */
+  cursor: pointer;    /* 鼠标悬停时显示为手型 */
+}
+
+#backButton:hover {
+  background-color: #dee649;
+  scale: 1.1; /* 按钮悬停时的颜色变化 */
+}
+
+
 /* title */
 #pageTitle {
   font-size: 48px;
