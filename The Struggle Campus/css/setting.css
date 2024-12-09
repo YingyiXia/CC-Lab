@@ -1,0 +1,128 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Font Style */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: linear-gradient(135deg, #ceade6, #eae8ed);
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Page Title */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+#pageTitle {
+  font-family: 'Rock Salt', sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: rgb(46,3,67); /* Purple color for title */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* News Title Styling */
+.news-title {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: rgb(46,3,67);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Container for Grid Layout */
+.main-news-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns layout */
+  gap: 20px; /* Space between items */
+  max-width: 1200px; /* Limit width */
+  margin: 0 auto;
+}
+
+/* Main News Item */
+.main-news-item {
+  position: relative;
+  background-color: #f5f2f2;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.31);
+  padding-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-news-item:hover {
+  transform: scale(1.02);
+}
+
+/* Main News Image */
+.main-news-image {
+  width: 100%;
+  height: 300px; /* Adjust the height to be consistent */
+  object-fit: cover;
+  border-bottom: 5px solid #ddd;
+}
+
+/* Button Styling */
+button {
+  background-color: rgb(46,3,67);
+  color: white;
+  font-size: 1.2em;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a148c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust Title */
+  #pageTitle {
+    font-size: 3em;
+  }
+
+  /* Image and Title on Smaller Screens */
+  .main-news-image {
+    height: 250px;
+  }
+
+  .news-title {
+    font-size: 1.4em;
+  }
+
+  /* Button Styling on Smaller Screens */
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  /* Adjust grid layout on smaller screens */
+  .main-news-container {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
