@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>enter your name</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/name.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
 </head>
 <body>
     
     <div class="name-screen">
         <h2>Your name</h2>
-        
+        <div>
         <form id="nameForm" action="setting.html" method="GET">
             <input type="text" id="playerName" name="playerName" placeholder="Your Name" required>
             <button type="submit" id="submitName">✅</button>
+        </div>
         </form>
-        <h3>Eyes</h3>
-        <button>A</button><button>B</button><button>C</button>
-        <h3>nose</h3>
-        <button>A</button><button>B</button><button>C</button>
-        <h3>hair</h3>
-        <button>A</button><button>B</button><button>C</button>
-        <h3>mouth</h3>
-        <button>A</button><button>B</button><button>C</button>
-    </div>
+    <div id='p5-canvas-container-name'>
+        <!-- p5 canvas will be appended here. -->
+      </div>
+      <div><button type="button" id="buttonA">Male</button></div>
+        <div><button type="button" id="buttonB">Female</button></div>
 
     <div></div>
     <div></div>
@@ -32,6 +30,6 @@
         <button id="conceptButton">Concept</button>
     </a>
 
-    <script src="js/sketch.js"></script>
+    <script src="js/namePage.js"></script>
 </body>
 </html>
