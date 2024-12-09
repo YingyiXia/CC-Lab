@@ -1,0 +1,85 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ceade6, #eae8ed); /* Gradually changed background */
+  color: #fff;  /* 白色文本 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* title */
+#pageTitle {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 670px;
+  background: -webkit-linear-gradient(left, #2d0728, #27024b);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-top: 20px;
+}
+
+
+#problems-tips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 150px;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.problem-tip-item {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  margin-top: 70px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.51);
+  overflow: hidden; 
+}
+
+.problem-tip-item:hover {
+  transform: scale(1.1); 
+  background-color: rgba(46, 3, 70, 0.82);
+}
+
+
+.problem {
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+
+.tip {
+  font-size: 18px;
+  opacity: 0;
+  display: none; 
+  transition: opacity 0.3s ease, display 0.3s ease;
+}
+
+
+.problem-tip-item:hover .problem {
+  opacity: 0; 
+}
+
+.problem-tip-item:hover .tip {
+  opacity: 1; 
+  display: block; 
+}
