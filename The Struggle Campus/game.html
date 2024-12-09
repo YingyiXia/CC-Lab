@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Start</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-
+    <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
     <div class="game-screen">
-        <h1>Welcome,<span id="playerNameDisplay"></span></h1>
+        <div>
+            <h1>Welcome,<span id="playerNameDisplay">Freshman!</span></h1>
+            <p><i>Let's discover the campus together!</i></p>
+        </div>
+        
+        <div class="button-container">
+            <div class="main-button-item">
+                <a href="Social Media.html">
+                    <img src="assets/Ins.jpg" alt="Ins" class="main-button-image">
+                    <div><p>Media</p></div>
+                </a>
+                
+            </div>
+            <div class="main-button-item">
+                <a href="jobHunting.html">
+                    <img src="assets/recruitment fair.jpg" alt="Ins" class="main-button-image">
+                    <div><p>Finding jobs</p></div>
+                </a>
+                
+            </div>
+            <div class="main-button-item">
+                <a href="mental.html">
+                    <img src="assets/mental Health.jpg" alt="Ins" class="main-button-image">
+                    <div><p>Mental Health Crisis</p></div>
+                </a>
+                
+            </div>
+            <div class="main-button-item">
+                <a href="Gym.html">
+                    <img src="assets/GymBackground.png" alt="Ins" class="main-button-image">
+                    <div><p>Gym</p></div>
+                </a>
+                
+            </div>
 
-        <p><i>Let's discover the campus together!</i></p>
+            
+        </div>
+        <div><img src= 'background-image' alt="kk"></div>
+
+    
     </div>
-    <div id='p5-canvas-container'>
-        <!-- p5 canvas will be appended here. -->
-      </div>
-
-    <script>
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        const playerName = urlParams.get('playerName');
-        
-        
-        document.getElementById('playerNameDisplay').textContent = playerName;
-    </script>
-    <h3>Map</h3>
-    <a href="concept.html">
-        <button id="conceptButton">Concept</button>
-    </a>
-   
-        <button id="realityButton">Reality</button>
-    
-
-    <script src="js/sketch.js"></script>
-    
 </body>
 </html>
+
