@@ -96,9 +96,9 @@ function displayChargeBar() {
   fill(255);
   noStroke();
   
-  rect(130, 50, width - 800, 20);  // 背景框
-  fill(map(chargingTime, 0, 55, 0, width - 800), 255-map(chargingTime, 0, 120, 0, width - 800), 0);  // 绿色表示蓄力条
-  rect(130, 50, map(chargingTime, 0, 100, 0, width - 800), 20);  // 根据蓄力时间填充蓄力条
+  rect(130, 50, width - 800, 20);  
+  fill(map(chargingTime, 0, 55, 0, width - 800), 255-map(chargingTime, 0, 120, 0, width - 800), 0);  
+  rect(130, 50, map(chargingTime, 0, 100, 0, width - 800), 20); 
 }
 
 function gameOver() {
@@ -108,26 +108,25 @@ function gameOver() {
   text("Game Over!", width / 2, height / 2);
   textSize(32);
   text("Final Score: " + score, width / 2, height / 2 + 50);
-  noLoop();  // 停止游戏循环
-}
+  noLoop();  }
 
 
 function mousePressed() {
-  // 在鼠标按下时开始蓄力，记录蓄力开始时间
+  
   chargeStartTime = millis();
   isCharging = true;
-  chargingTime = 0;  // 重置蓄力条
+  chargingTime = 0; 
 }
 
 function mouseReleased() {
   
   if (isCharging) {
-    let chargeDuration = millis() - chargeStartTime;  // 计算蓄力的持续时间
-    let angle = -QUARTER_PI;  // 设置投篮角度，可以根据需求调整
-    let power = map(chargeDuration, 0, 1000, 5, 20);  // 将蓄力时间映射到一定的投篮力度
-    basketball.reset(dancer.x + 50, dancer.y - 50);  // 重置篮球位置
-    basketball.throwBall(angle, power);  // 投篮，速度与蓄力时间相关
-    isCharging = false;  // 结束蓄力
+    let chargeDuration = millis() - chargeStartTime;  
+    let angle = -QUARTER_PI;  
+    let power = map(chargeDuration, 0, 1000, 5, 20);  
+    basketball.reset(dancer.x + 50, dancer.y - 50);  // 
+    basketball.throwBall(angle, power);  // 
+    isCharging = false; 
   }
 }
 
