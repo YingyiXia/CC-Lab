@@ -1,41 +1,41 @@
-/* 设置全局样式 */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 页面背景 */
+
 body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #ceade6, #eae8ed);
   color: #333;
   line-height: 1.6;
-  height: 100vh; /* 保证背景图片填满整个屏幕 */
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* 防止页面滚动 */
+  overflow: hidden;
 }
 
-/* 屏幕容器 */
+
 .game-screen {
   position: relative;
-  width: 100%; /* 让容器宽度充满屏幕 */
-  height: 100vh; /* 让容器高度充满屏幕 */
+  width: 100%; 
+  height: 100vh;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  background-color: rgba(255, 255, 255, 0.8); 
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  z-index: 2; /* 保证内容在背景图片上方 */
+  z-index: 2; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* 标题和欢迎文字 */
+
 h1 {
   font-size: 56px;
   font-weight: 700;
@@ -55,7 +55,7 @@ p {
   margin-bottom: 110px;
 }
 
-/* 按钮容器 */
+
 .button-container {
   display: flex;
   justify-content: space-evenly;
@@ -64,7 +64,7 @@ p {
   border-radius: 20px ;
 }
 
-/* 按钮项样式 */
+
 .main-button-item {
   width: 180px;
   margin: 100px;
@@ -87,25 +87,25 @@ p {
   opacity: 0.8;
 }
 
-/* 背景图片 */
+/* img */
 .game-screen > div:last-child {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* 确保背景图片在内容下面 */
+  z-index: -1;
 }
 
 .game-screen > div:last-child img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 保证图片拉伸填满屏幕 */
-  filter: blur(5px); /* 模糊效果 */
-  opacity: 0.4; /* 背景图片透明度 */
+  object-fit: cover; 
+  filter: blur(5px); 
+  opacity: 0.4;
 }
 
-/* 响应式设计 */
+
 @media (max-width: 768px) {
   .button-container {
       flex-direction: column;
